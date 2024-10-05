@@ -3,10 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Women's Shop Inventory</title>
+    <link rel="stylesheet" href="style.css"> <!-- Your CSS file -->
 </head>
 <body>
-    
+    <header>
+        <h1>Women's Shop Inventory Management</h1>
+    </header>
+
+    <!-- Inventory Table -->
+    <section>
+        <h2>Product List</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>Stock</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="inventory-table">
+                <!-- Dynamic rows go here -->
+            </tbody>
+        </table>
+        <button id="add-product-btn">Add Product</button>
+    </section>
+
+    <!-- Add Product Form -->
+    <section id="add-product-form" style="display: none;">
+        <h2>Add New Product</h2>
+        <form>
+            <label for="product-name">Product Name:</label>
+            <input type="text" id="product-name">
+            
+            <label for="category">Category:</label>
+            <input type="text" id="category">
+            
+            <label for="price">Price:</label>
+            <input type="number" id="price">
+            
+            <label for="stock">Stock:</label>
+            <input type="number" id="stock">
+            
+            <button type="submit">Add Product</button>
+        </form>
+    </section>
+
+    <script src="script.js"></script> <!-- Your JS file -->
 </body>
 </html>
