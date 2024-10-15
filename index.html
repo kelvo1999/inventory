@@ -1,56 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Women's Shop Inventory</title>
-    <link rel="stylesheet" href="style.css"> <!-- Your CSS file -->
-</head>
-<body>
-    <header>
-        <h1>Women's Shop Inventory Management</h1>
-    </header>
+<?php
+require_once 'includes/db.php';
+?>
+    <!DOCTYPE html>
+    <html lang="en">
 
-    <!-- Inventory Table -->
-    <section>
-        <h2>Product List</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Product Name</th>
-                    <th>Category</th>
-                    <th>Price</th>
-                    <th>Stock</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody id="inventory-table">
-                <!-- Dynamic rows go here -->
-            </tbody>
-        </table>
-        <button id="add-product-btn">Add Product</button>
-    </section>
+    <head>
+        <meta charset="UTF-8">
+        <title>Home - Winny Thrift Shop</title>
+        <link rel="stylesheet" href="assets/css/styles.css">
+    </head>
 
-    <!-- Add Product Form -->
-    <section id="add-product-form" style="display: none;">
-        <h2>Add New Product</h2>
-        <form>
-            <label for="product-name">Product Name:</label>
-            <input type="text" id="product-name">
-            
-            <label for="category">Category:</label>
-            <input type="text" id="category">
-            
-            <label for="price">Price:</label>
-            <input type="number" id="price">
-            
-            <label for="stock">Stock:</label>
-            <input type="number" id="stock">
-            
-            <button type="submit">Add Product</button>
-        </form>
-    </section>
+    <body>
+        <?php include 'includes/header.php'; ?>
 
-    <script src="script.js"></script> <!-- Your JS file -->
-</body>
-</html>
+        <h1>Welcome to Winny Thrift Shop</h1>
+        <div class="search-filter">
+            <input type="text" id="search" placeholder="Search products...">
+            <select id="category">
+            <option value="">All Categories</option>
+            <option value="clothing">Clothing</option>
+            <option value="accessories">Accessories</option>
+            <option value="shoes">Shoes</option>
+            <!-- Add more categories as needed -->
+        </select>
+            <button onclick="filterProducts()">Filter</button>
+        </div>
+
+        <div class="products">
+            <?php
+            $sql = "SELECT products.*, users.username FROM products JOIN users ON products.seller_id = users.user_id";
+            $result = $conn->query($sql);
+            if($result->num_rows > 0){
+                while($row = $result->fetch_assoc()){
+                    echo "<div class='product'>
+                            <img src='assets/images/".$row['image']."' alt='".$row['name']."'>
+                            <h3>".$row['name']."</h3>
+                            <p>".$row['description']."</p>
+                            <p>Price: $".$row['price']."</p>
+                            <p>Seller: ".$row['username']."</p>
+                            <a href='product.php?id=".$row['product_id']."'>View Details</a>
+                          </div>";
+                }
+            } else {
+                echo "<p>No products available.</p>";
+            }
+        ?>
+        </div>
+
+        <?php include 'includes/footer.php'; ?>
+
+        <script src="assets/js/scripts.js"></script>
+    </body>
+
+    </html>
