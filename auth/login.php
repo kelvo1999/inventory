@@ -49,6 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
 <body>
+<?php include '../includes/header.php'; ?>
     <h2>Login</h2>
     <?php
         if(isset($_SESSION['error'])) {
