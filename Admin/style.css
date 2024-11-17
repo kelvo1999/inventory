@@ -8,7 +8,7 @@ background : #BCE0A8 url(img/bg.jpg) top center repeat-y;
 color : #000;
 }
 			/*CONTAINER*/
-#wrapper
+#wrapper 
 {
 position : relative;
 width : 780px;
@@ -116,7 +116,7 @@ text-decoration : none;
 }
 			/*SCROLLBAR*/
 div.scroll {
-height : 18em;
+height : auto;
 width : 160px;
 padding : 1ex;
 margin : 0 0 30px 5px;

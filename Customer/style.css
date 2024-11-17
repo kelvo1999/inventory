@@ -8,7 +8,7 @@ background : #BCE0A8 url(img/bg.jpg) top center repeat-y;
 color : #000;
 }
 			/*CONTAINER*/
-#wrapper
+#wrapper 
 {
 position : relative;
 width : 780px;
@@ -116,7 +116,7 @@ text-decoration : none;
 }
 			/*SCROLLBAR*/
 div.scroll {
-height : 18em;
+height : auto;
 width : 160px;
 padding : 1ex;
 margin : 0 0 30px 5px;
@@ -164,11 +164,12 @@ list-style-type : square;
 padding : 0;
 margin : 0;
 background : inherit;
-color : #457C05;
+color:#660000;
 }
 .side li {
 padding-left : 0.2em;
 margin-left : 2em;
+color:#660000;
 }
 			/*CLASSES*/
 .news {

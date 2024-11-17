@@ -1,13 +1,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>Online Clothing Store</title>
+<title>Online Cloth Shopping</title>
 <link href="style.css" rel="stylesheet" type="text/css" />
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <style type="text/css">
 <!--
-.style8 {font-size: 24px}
 .style9 {font-size: 95%; font-weight: bold; color: #003300; font-family: Verdana, Arial, Helvetica, sans-serif; }
+.style3 {font-weight: bold}
 -->
 </style>
 </head>
@@ -19,7 +19,40 @@
   ?>
 
   <div id="content">
-    <h2><span style="color:#003300"> Welcome To Our Online Clothing Store</span></h2>
+    <h2><span style="color:#003300"> Special Offers</span></h2>
+    <ul>
+
+      <?php
+
+$con = mysqli_connect("localhost","root", "", "shopping");
+
+$sql = "select * from Offer_Master";
+
+$result = mysqli_query($con, $sql);
+
+while($row = mysqli_fetch_array($result))
+{
+$Id=$row['OfferId'];
+$Offer=$row['Offer'];
+$Detail=$row['Detail'];
+$Valid=$row['Valid'];
+?>
+
+        <li><?php echo $Offer;?> : <?php echo $Detail;?>: <?php echo $Valid;?></li>
+
+
+      <?php
+}
+// Retrieve Number of records returned
+$records = mysqli_num_rows($result);
+?>
+
+      <?php
+// Close the connection
+mysqli_close($con);
+?>
+    </ul>
+    <p align="justify">&nbsp;</p>
     <table width="100%" border="0" cellspacing="3" cellpadding="3">
       <tr>
         <td>&nbsp;</td>
@@ -30,6 +63,8 @@
         <td><p><img src="img/Jeans.jpg" alt="box" width="100" height="100" hspace="10" align="left" class="imgleft" title="box" /></p></td>
         <td><p><img src="img/asd.jpg" alt="box" width="100" height="100" hspace="10" align="left" class="imgleft" title="box" /></p></td>
         <td><p><img src="img/images.jpg" alt="box" width="100" height="100" hspace="10" align="left" class="imgleft" title="box" /></p></td>
+        
+
       </tr>
       <tr>
         <td height="26" bgcolor="#BCE0A8"><div align="center" class="style9">Jeans</div></td>

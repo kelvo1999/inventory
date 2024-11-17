@@ -6,7 +6,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <style type="text/css">
 <!--
-.style8 {font-size: 24px}
 .style9 {font-size: 95%; font-weight: bold; color: #003300; font-family: Verdana, Arial, Helvetica, sans-serif; }
 -->
 </style>
@@ -19,7 +18,8 @@
   ?>
 
   <div id="content">
-    <h2><span style="color:#003300"> Welcome To Our Online Clothing Store</span></h2>
+    <h2><span style="color:#003300"> Welcome Administrator </span></h2>
+    <p align="justify">&nbsp;</p>
     <table width="100%" border="0" cellspacing="3" cellpadding="3">
       <tr>
         <td>&nbsp;</td>
