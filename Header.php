@@ -1,5 +1,5 @@
 <div id="title">
-    <h1><span style="color: #008000;">ONLINE CLOTHING STORE</span></h1>
+    <h1><span style="color: #008000;">WINNY THRIFT STORE</span></h1>
   </div>
   
 <div class="container">

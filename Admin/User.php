@@ -75,21 +75,23 @@
 
 $con = mysqli_connect("localhost","root", "", "shopping");
 
-$sql = "select * from admin_master";
+// $sql = "select * from admin_master";
+
+$sql = 'SELECT * FROM customer_registration';
 
 $result = mysqli_query($con, $sql);
 
 while($row = mysqli_fetch_array($result))
 {
-$Id=$row['AdminId'];
+$Id=$row['CustomerId'];
 $UserName=$row['UserName'];
 
 ?>
             <tr>
               <td class="style3"><div align="left" class="style9 style5"><strong><?php echo $Id;?></strong></div></td>
               <td class="style3"><div align="left" class="style9 style5"><strong><?php echo $UserName;?></strong></div></td>
-              <td class="style3"><div align="left" class="style9 style5"><strong><a href="EditUser.php?AdminId=<?php echo $Id;?>">Edit</a></strong></div></td>
-              <td class="style3"><div align="left" class="style9 style5"><strong><a href="DeleteUser.php?AdminId=<?php echo $Id;?>">Delete</a></strong></div></td>
+              <td class="style3"><div align="left" class="style9 style5"><strong><a href="EditUser.php?CustomerId=<?php echo $Id;?>">Edit</a></strong></div></td>
+              <td class="style3"><div align="left" class="style9 style5"><strong><a href="DeleteUser.php?CustomerId=<?php echo $Id;?>">Delete</a></strong></div></td>
             </tr>
             <?php
 }
